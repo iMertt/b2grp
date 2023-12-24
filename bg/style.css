@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #0f0f0f;
+  display: flex;
+  justify-content: center;
+}
+
+header li {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8%;
+  padding: 20px;
+  border-right: 3px solid red;
+}
+
+header li i {
+  color: red;
+  transition: color 0.3s;
+}
+
+header li:hover {
+  background-color: red;
+}
+
+header li:hover i {
+  color: white;
+  transform: scale(1.4);
+  transition: transform 0.3s;
+}
+
+header li:first-child {
+  border-left: 3px solid red;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+}
+.container {
+  display: flex;
+}
+.left,
+.right {
+  flex: 1;
+  text-align: center;
+}
+footer .socialMedia a {
+  text-align: center;
+  color: #eee;
+}
+footer .socialMedia p {
+  color: white;
+}
+footer .socialMedia ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  font-size: 1.6rem;
+}
+footer .socialMedia ul li {
+  padding: 0.5rem;
+}
+footer p:first-child {
+  border-left: 1px solid red;
+  padding-left: 10px;
+}
+.fab {
+  font-size: 2rem;
+}
+.fa-facebook,
+.fa-twitter,
+.fa-instagram,
+.fa-linkedin {
+  transition: 0.4s;
+  cursor: pointer;
+}
+.fa-facebook:hover,
+.fa-facebook:focus {
+  color: #1877f2;
+  transform: scale(1.1);
+}
+
+.fa-twitter:hover,
+.fa-twitter:focus {
+  color: #1da1f2;
+  transform: scale(1.1);
+}
+
+.fa-instagram:hover,
+.fa-instagram:focus {
+  color: #bd22a2;
+  transform: scale(1.1);
+}
+
+.fa-linkedin:hover,
+.fa-linkedin:focus {
+  color: #0638da;
+}
+.right {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+.right li {
+  display: flex;
+  align-items: center;
+}
+.right span:first-child {
+  margin-right: 0;
+}
+.right img {
+  height: 3.1em;
+  margin-right: 0;
+}
+.right span {
+  font-weight: bold;
+  font-size: 1.7em;
+}
+span:first-child {
+  color: red;
+}
+span:last-child {
+  color: white;
+}

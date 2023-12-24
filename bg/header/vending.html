@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <title>BGR</title>
+  </head>
+  <style>
+    header #secili {
+      background-color: red;
+    }
+
+    header #secili i {
+      color: white;
+    }
+    .content {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content img {
+      border: 2px solid red;
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+    .overlay-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 10%;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+    }
+
+    .overlay-text {
+      max-width: 100%;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <header>
+      <ul>
+        <li>
+          <a href="../index.html" title="Anasayfa">
+            <i class="fa-solid fa-home"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mimarlik.html" title="Mimarlık"
+            ><i class="fa-solid fa-compass-drafting"></i
+          ></a>
+        </li>
+        <li>
+          <a href="muhendislik.html" title="Mühendislik"
+            ><i class="fa-solid fa-microscope"></i
+          ></a>
+        </li>
+        <li>
+          <a href="mekatronik.html" title="Mekatronik"
+            ><i class="fa-solid fa-gears"></i
+          ></a>
+        </li>
+        <li>
+          <a href="turizm.html" title="Turizm"
+            ><i class="fa-solid fa-plane-departure"></i
+          ></a>
+        </li>
+        <li id="secili">
+          <a href="vending.html" title="Vending"
+            ><i class="fa-solid fa-tablet-screen-button"></i
+          ></a>
+        </li>
+        <li>
+          <a href="hakkimizda.html" title="Hakkımızda"
+            ><i class="fa-solid fa-info"></i
+          ></a>
+        </li>
+      </ul>
+    </header>
+    <div class="content">
+      <img src="../images/vending/vending1.jpg" alt="" />
+      <div class="overlay-container">
+        <div class="overlay-text">
+          <p>Yazısı dosyada yoktu</p>
+        </div>
+      </div>
+      <img src="../images/vending/vending2.jpg" alt="" />
+      <img src="../images/vending/vending3.jpg" alt="" />
+      <img src="../images/vending/vending4.jpg" alt="" />
+      <img src="../images/vending/vending5.jpg" alt="" />
+      <img src="../images/vending/vending6.jpg" alt="" />
+      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="left">
+          <div class="socialMedia">
+            <ul>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fab fa-facebook" tabindex="0"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fab fa-twitter" tabindex="0"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fab fa-instagram" tabindex="0"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fab fa-linkedin" tabindex="0"></i>
+                </a>
+              </li>
+              <li><p>Bilgi Toplumu Hizmetleri</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <ul>
+            <li>
+              <img src="../images/logo.png" alt="B2Logo" />
+            </li>
+            <li><span> B2</span><span> GRUP</span></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document
+        .getElementsByClassName("content")[0]
+        .getElementsByTagName("img");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script
+    defer
+    src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+    integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"
+  ></script>
+</html>
